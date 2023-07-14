@@ -22,11 +22,13 @@ func SignUp(sig models.SignUp) error {
 
 	// setencia := "INSERT INTO users (User_email , User__UUID , User_DateAdd)"
 
-	setencia := fmt.Sprintf(`
-    INSERT INTO users (User_Email, User_UUID, User_DateAdd) VALUES ('%v' , '%v', '%v')`,
-		sig.UserEmail,
-		sig.UserUUID,
-		tools.FechaMySql())
+	// setencia := fmt.Sprintf(`
+	// INSERT INTO users (User_Email, User_UUID, User_DateAdd) VALUES ('%v' , '%v', '%v')`,
+	// 	sig.UserEmail,
+	// 	sig.UserUUID,
+	// 	tools.FechaMySql())
+
+	setencia := "INSERT INTO users (User_Email, User_UUID, User_DateAdd) VALUES ('" + sig.UserEmail + "','" + sig.UserUUID + "','" + tools.FechaMySql() + "')"
 
 	fmt.Println(setencia)
 
